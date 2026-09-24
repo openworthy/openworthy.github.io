@@ -1,0 +1,36 @@
+# GitHub Pages (Jekyll) settings for the website. The source lives here;
+# scripts/publish-site.sh publishes it to openworthy/openworthy.github.io.
+title: OpenWorthy
+description: Marks the email worth reading. Runs on your own computer and reads headers only; nothing about you or your mail ever leaves it.
+url: https://openworthy.github.io
+baseurl: "" # an organization site is served at the root
+theme: minima
+permalink: pretty # /pricing/, as the app links to it
+exclude: [README.md] # the public repository's own page on GitHub
+# Each page carries its own heading; the theme's page layout would repeat
+# the title above it.
+defaults:
+  - scope: { path: "" }
+    values: { layout: default }
+
+# Who sells OpenWorthy, as named in the terms and privacy policy. Paddle
+# requires the legal name to match the Paddle account exactly. The publish
+# script refuses to publish while either is a placeholder.
+seller: "BuzzNeuron"
+contact: "pranay@buzzneuron.com"
+
+# Paddle checkout links (step 6). While empty, the pricing page says buying
+# opens with the public beta.
+checkout:
+  pro: ""
+  founder: ""
+
+# The navigation: every legal page Paddle and Google look for is one click
+# from any page.
+header_pages:
+  - install.md
+  - how-it-works.md
+  - pricing.md
+  - verify.md
+  - privacy.md
+  - terms.md
