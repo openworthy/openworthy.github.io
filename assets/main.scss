@@ -1,0 +1,21 @@
+---
+# The theme's stylesheet, plus the owl beside the site's name.
+---
+@import "minima";
+
+.site-title::before {
+  content: "";
+  display: inline-block;
+  width: 34px;
+  height: 33px;
+  margin-right: 10px;
+  vertical-align: -8px;
+  background: url("{{ "/assets/owl-head.svg" | relative_url }}") no-repeat center / contain;
+}
+
+.owl-hero {
+  display: block;
+  width: 168px;
+  height: auto;
+  margin: 0 0 4px -12px;
+}

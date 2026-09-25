@@ -2,6 +2,8 @@
 title: OpenWorthy — marks the email worth reading, on your own computer
 ---
 
+<img class="owl-hero" src="{{ "/assets/owl.svg" | relative_url }}" alt="" width="168" height="168">
+
 # OpenWorthy
 
 OpenWorthy puts a **Worth Reading** label (or flag, or Outlook category) on the

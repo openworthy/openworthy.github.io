@@ -1,0 +1,14 @@
+{%- comment -%}
+The theme's (minima 2.5.1) head, plus the owl's favicons; without its
+analytics hook, since the website uses no analytics (privacy policy).
+{%- endcomment -%}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- seo -%}
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <link rel="icon" type="image/png" sizes="64x64" href="{{ "/favicon.png" | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ "/apple-touch-icon.png" | relative_url }}">
+  {%- feed_meta -%}
+</head>

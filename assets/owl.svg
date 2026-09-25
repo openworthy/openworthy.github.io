@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="The OpenWorthy owl">
+<title>The OpenWorthy owl</title>
+<!-- The character: its eyes are the O O, its chest feathers the w w. -->
+<style>
+.tilt,.blink,.look{transform-box:fill-box}
+.tilt{transform-origin:50% 100%;animation:tilt 5s ease-in-out infinite}
+.blink{transform-origin:center;animation:blink 5s infinite}
+.look{animation:look 5s ease-in-out infinite}
+@keyframes tilt{0%,20%{transform:rotate(0)}30%,42%{transform:rotate(-5deg)}52%,64%{transform:rotate(5deg)}74%,100%{transform:rotate(0)}}
+@keyframes blink{0%,86%,100%{transform:scaleY(1)}90%{transform:scaleY(.08)}94%{transform:scaleY(1)}}
+@keyframes look{0%,15%{transform:translateX(0)}25%,40%{transform:translateX(-6px)}50%,65%{transform:translateX(6px)}75%,100%{transform:translateX(0)}}
+@media (prefers-reduced-motion:reduce){.tilt,.blink,.look{animation:none}}
+</style>
+<g class="tilt" stroke="#1b1b18" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+<polygon fill="#2f6b4f" points="52,100 58,38 102,70"/>
+<polygon fill="#2f6b4f" points="188,100 182,38 138,70"/>
+<ellipse fill="#2f6b4f" cx="120" cy="140" rx="80" ry="84"/>
+<path fill="#245a40" d="M46 142 C44 178 60 204 86 214 C76 190 72 166 74 142 Z"/>
+<path fill="#245a40" d="M194 142 C196 178 180 204 154 214 C164 190 168 166 166 142 Z"/>
+<path fill="#e8f1ec" d="M58 114 C58 86 82 76 102 82 L120 94 L138 82 C158 76 182 86 182 114 C182 144 156 158 120 158 C84 158 58 144 58 114 Z"/>
+<g class="blink">
+<circle fill="#fffdf7" cx="95" cy="118" r="21"/>
+<circle fill="#fffdf7" cx="145" cy="118" r="21"/>
+<g class="look" stroke="none">
+<circle fill="#1b1b18" cx="95" cy="120" r="9"/>
+<circle fill="#1b1b18" cx="145" cy="120" r="9"/>
+<circle fill="#fffdf7" cx="92" cy="116" r="3"/>
+<circle fill="#fffdf7" cx="142" cy="116" r="3"/>
+</g>
+</g>
+<path fill="#f2b544" d="M111 134 L129 134 L120 148 Z"/>
+<path fill="none" stroke="#e8f1ec" stroke-width="4" d="M100 178 q6 8 12 0 q6 8 12 0 q6 8 12 0"/>
+<path fill="none" stroke="#e8f1ec" stroke-width="4" d="M106 196 q6 8 12 0 q6 8 12 0"/>
+<ellipse fill="#f2b544" cx="100" cy="224" rx="13" ry="6"/>
+<ellipse fill="#f2b544" cx="140" cy="224" rx="13" ry="6"/>
+</g>
+</svg>
