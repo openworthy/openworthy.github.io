@@ -6,29 +6,51 @@ title: OpenWorthy — marks the email worth reading, on your own computer
 
 # OpenWorthy
 
-OpenWorthy puts a **Worth Reading** label (or flag, or Outlook category) on the
-few emails that actually need you: replies in conversations you're part of,
-mail from people you write to, invitations, messages addressed to you alone.
-Everything else is left exactly where it was.
+**The few emails that need you, marked — and nobody reads your mail to do it.**
 
-- **Nothing about you or your mail ever leaves your computer.** Your mail
-  goes from your provider to your machine and nowhere else —
-  [check it yourself](verify.md).
-- **Reads headers only.** Who sent it, to whom, which conversation it belongs
-  to. Never the body, never attachments.
-- **Never moves or deletes mail.** It adds a marker, and it can take it off
-  again (`openworthy undo`).
-- **Explains itself.** `openworthy explain` shows, for any message, exactly
-  which facts added or removed points.
-- **Learns from you, visibly.** Remove a mark by hand and it learns that
-  sender matters less; it never changes its settings without asking.
-- **Free for one mailbox**, with no time limit. [Pro](pricing.md) adds every
-  mailbox you have, and marks mail while your computer is off.
+OpenWorthy puts a **Worth Reading** mark on the emails that actually need
+you: replies in conversations you're part of, mail from people you write to,
+invitations, messages written to you alone. Everything else stays exactly
+where it was.
 
-Works with Gmail, Microsoft 365 / Outlook.com, and any mailbox that offers
-IMAP with an app password (iCloud, Fastmail, Yahoo, Zoho, your own server…).
+<figure class="inbox-mock" aria-label="An illustration of an inbox with three emails marked Worth Reading">
+  <div class="row marked"><span class="from">Priya Shah</span><span class="mark">Worth Reading</span><span class="subject">Re: the contract — final version attached</span></div>
+  <div class="row"><span class="from">Weekend Deals</span><span class="subject">40% off everything, this weekend only</span></div>
+  <div class="row marked"><span class="from">Tom Okafor</span><span class="mark">Worth Reading</span><span class="subject">Invitation: budget review, Tuesday 10:00</span></div>
+  <div class="row"><span class="from">Notifications</span><span class="subject">Your order has shipped</span></div>
+  <div class="row marked"><span class="from">Dana Levi</span><span class="mark">Worth Reading</span><span class="subject">Quick question about Thursday</span></div>
+  <figcaption>An illustration. The mark appears in the mail app you already use, on your computer and your phone.</figcaption>
+</figure>
 
-[Install](install.md) · [How it works](how-it-works.md) · [Pricing](pricing.md) · [Privacy](privacy.md)
+- **Your mail stays yours.** OpenWorthy runs on your computer. Nothing about
+  you or your mail ever leaves it — not to us, not to anyone.
+  [Check it yourself](verify.md).
+- **It never opens your emails.** It looks only at who sent a message, to
+  whom, and which conversation it belongs to. Never the text, never an
+  attachment.
+- **It never moves or deletes anything.** It adds its mark, and it can take
+  every one of them off again.
+- **Every mark says why.** "You're in this conversation." "You've written to
+  them before." No black box, and no AI.
+- **It learns from you.** Take a mark off and it learns that sender matters
+  less. It never changes its settings without asking you.
+
+## Five minutes to start
+
+1. **Download** the app for Mac, Windows or Linux.
+2. **Connect your email:** Gmail, Outlook and Microsoft 365, iCloud,
+   Fastmail, Yahoo, and most others.
+3. **Look at the preview.** It shows what it would mark, and marks nothing
+   until you say so.
+4. **Press Start.** From then on, new mail is marked as it arrives.
+
+**[Download OpenWorthy](install.md)**
+
+**Free for one mailbox**, with no time limit. [Pro](pricing.md) covers every
+mailbox you have, and has your mail server mark mail from your most trusted
+senders while your computer is off.
+
+[How it works](how-it-works.md) · [Pricing](pricing.md) · [Privacy](privacy.md)
 
 ## Guides
 
@@ -37,3 +59,6 @@ IMAP with an app password (iCloud, Fastmail, Yahoo, Zoho, your own server…).
 - [Local inbox triage](local-inbox-triage.md)
 - [A self-hosted alternative to SaneBox](self-hosted-sanebox-alternative.md)
 - [OpenWorthy compared with hosted triage services](compared-with-hosted-services.md)
+
+Using the command line, a server or a NAS?
+[Everything technical is here](command-line.md).

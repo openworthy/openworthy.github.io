@@ -4,6 +4,13 @@ title: Check it yourself
 
 # Check it yourself
 
+**In short:** day to day, OpenWorthy connects to your email provider and
+nothing else; the table below lists the few other moments, such as checking
+for a new version. A free firewall app can show you every connection it
+makes, and this page walks you through it, step by step.
+If your firm has someone who looks after its computers, this is the page to
+hand them.
+
 OpenWorthy's code is not public, so you should not have to take our word for
 what it does. You don't need the code to check its central promise —
 **nothing about you or your mail ever leaves your computer** — because that

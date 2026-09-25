@@ -1,82 +1,73 @@
 ---
-title: How OpenWorthy decides
+title: How OpenWorthy works
 ---
 
-# How it decides
+# How it works
 
-For each new message OpenWorthy adds up points from facts about it, read from
-its headers and from your own history with the sender:
+## What it looks at
 
-| Fact | Points |
-|---|---:|
-| It's a reply in a conversation you took part in | +45 |
-| You have emailed this sender before | +40 |
-| It's a calendar invitation, change or cancellation | +30 |
-| You are the only recipient | +20 |
-| You usually reply to this sender | up to +25 |
-| It came through a mailing list | −25 |
-| It's from a no-reply address | −25 |
-| You are only copied (Cc) | −30 |
-| It was sent automatically (auto-reply, notification) | never marked |
+OpenWorthy asks of each new email the questions you would ask at a glance,
+using only who sent it, to whom, and which conversation it belongs to — and
+your own history with the sender, which it learns from your Sent folder, on
+your computer, when you connect:
 
-A message scoring **60 or more** is marked. The full list, and every weight,
-is in `openworthy config print --defaults`; any of it can be changed.
+- **Is it a conversation you're in?** A reply to something you wrote counts
+  for a lot.
+- **Do you write to this person?** People you email count for more, and
+  people you usually reply to count for more still.
+- **Is it an invitation?** Meeting invitations, changes and cancellations.
+- **Is it written to you?** Mail to you alone counts for more; being copied
+  counts for less.
+- **Is it sent in bulk?** Newsletters, mailing lists and no-reply addresses
+  count for less. Automatic messages, like out-of-office replies, are never
+  marked.
 
-`openworthy explain --last 10` shows the facts behind each decision:
+An email that clears the bar gets the mark. The app shows why for every one,
+in words: "You're in this conversation · You've emailed them 14 times".
 
-```
-Worth Reading · marked · score 108 (threshold 60)
-    +45  you're in this conversation
-    +40  you've emailed this sender
-    +15  sender is from your organisation
-     +8  addressed to you directly
-```
+## What it never does
 
-## It learns — with arithmetic, not AI
+- It never opens the text of an email or an attachment.
+- It never moves, archives or deletes mail, never sends anything, and never
+  marks anything as read.
+- It never sends anything about you or your mail anywhere — not to us, not to
+  anyone. [Check it yourself](verify.md).
+- There is no AI model, here or anywhere else. Just the questions above.
 
-There is no model and no training. OpenWorthy keeps counts per sender, which
-fade over three weeks, and adjusts from what you do:
+## You stay in charge
 
-- **You remove its mark by hand** (or say `openworthy reject`): that sender
-  counts for less, and that email is never marked again.
-- **You mark something yourself**, or quickly answer an email it didn't mark:
-  that sender counts for more.
-- **You leave marked mail unopened** for days: a little less.
-
-It never changes its own settings. When your corrections point to a change —
-"you undid a whole batch; want fewer marks?" — it asks
-(`openworthy suggestions`), shows what the change would have done last week,
-and every change can be reverted (`openworthy settings`).
+- **Preview first.** A new mailbox starts with a preview of what OpenWorthy
+  would mark. Nothing is marked until you press Start, and anything you
+  untick teaches it what you don't need.
+- **Take a mark off** in any mail app, or press *Not worth it* in
+  OpenWorthy: that sender counts for less, and that email is never marked
+  again.
+- **Mark something yourself**, or quickly answer an email it didn't mark:
+  that sender counts for more. Leaving marked mail unopened for days counts
+  a little against the sender.
+- **Undo** any group of marks from the Activity screen.
+- **Mark more or fewer** with Sensitivity, which shows what the change would
+  have done last week before you apply it.
+- **It asks before it changes.** When your corrections point to a better
+  setting, it suggests it and waits for your yes. Every change can be
+  reverted in Settings.
 
 ## When your computer is off
 
-OpenWorthy marks mail while it runs, so mail that arrives overnight is
-marked when your computer wakes. If you would rather it were marked as it
-arrives, you can hand the senders it is surest about to the mail server
-itself:
+OpenWorthy marks mail while one of your computers is on, so mail that
+arrives overnight is marked when your computer wakes.
 
-```
-openworthy rules            # who would be handed over, and why
-openworthy rules push       # put those rules on the server
-openworthy rules revoke     # take them off again
-```
-
-A sender qualifies only after several messages, all worth reading, all
-scoring well clear of the threshold, and none you ever unmarked — so the
-rules stay a small, safe subset of what OpenWorthy does itself. The rule
-only adds the marker: it never moves, archives, reads or deletes anything,
-and your own filters are left alone. The engine keeps deciding everything
-else as usual.
-
-This uses whatever the mailbox offers: a **Sieve** script (Fastmail,
-Dovecot, Stalwart and most self-hosted servers), **Gmail filters**, or
-**Outlook message rules**. It is off until you switch it on with
-`rulegen.enabled` in the configuration.
+With [Pro](pricing.md) you can have your mail server itself mark mail from
+the senders OpenWorthy is surest about, as it arrives — only people whose
+every message was worth reading. Those rules only ever add the mark and
+never touch filters of your own. Switch them on in Settings, under *Mark
+mail while this computer is off*, and off again at any time.
 
 ## What it changes in your mailbox
 
-Its own marker, one small record per computer (a hidden label or folder, or
-a message in an "OpenWorthy" folder on IMAP) so that only one of your
-computers marks at a time, and — only if you switch on server-side rules —
-rules that add that same marker. It never moves, archives or deletes
-mail, never sends anything, and never marks anything as read.
+Only three things: its own mark; a small note per computer, so that if you
+use OpenWorthy on more than one computer only one of them marks at a time;
+and, if you switch them on, the server rules above. Nothing else.
+
+Technical details, for those who want them:
+[command line, servers and NAS](command-line.md).

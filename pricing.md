@@ -51,8 +51,7 @@ it.
   invoices. Prices are in US dollars; your local price and any tax are shown
   at checkout.
 - **Your licence** is a short piece of text, sent by email. Paste it into the
-  app (*Plan → Add licence*) or run `openworthy licence add`. There is no
-  account and no login.
+  app (*Plan → Add licence*). There is no account and no login.
 - **It is checked on your computer.** OpenWorthy never contacts us to check
   a licence — which is also why a renewal comes as a new licence to paste in.
 - **30-day money-back guarantee.** No questions asked: see the

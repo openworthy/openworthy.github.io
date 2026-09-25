@@ -15,7 +15,7 @@ differ; check each one's own documentation.
 | What is read | Headers only | Varies by service |
 | What it does to mail | Adds or removes its own marker | Commonly moves mail into folders |
 | Works when your computer is off | With Pro, your mail server marks mail from your most trusted senders as it arrives; everything else when a computer of yours is on (or an always-on machine you own, in Docker) | Yes |
-| Explains each decision | Yes, fact by fact (`openworthy explain`) | Varies |
+| Explains each decision | Yes, every mark says why | Varies |
 | Price | Free for one mailbox; Pro US$39 a year for every mailbox ([pricing](pricing.md)) | Usually a subscription |
 | Account with the vendor | None — a Pro licence is text you paste in | Required |
 

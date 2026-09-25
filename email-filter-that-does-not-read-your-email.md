@@ -14,10 +14,10 @@ OpenWorthy is built that way:
 1. **It runs on your own computer.** There is no service to trust because
    there is no service. The connection goes from your machine straight to
    Gmail, Outlook or your IMAP server.
-2. **It only asks for headers.** For Gmail it requests `format=metadata`; for
-   IMAP, `BODY.PEEK[HEADER.FIELDS (…)]`; for Microsoft, an explicit field
-   list with no body. There is no code path that fetches a message body — and
-   the test suite fails if one ever appears.
+2. **It only asks for headers.** Every request it makes to Gmail, Outlook or
+   your mail server names the header fields it wants, and nothing else.
+   There is no code in OpenWorthy that fetches the text of an email — and its
+   own tests fail if any ever appears.
 3. **It decides from facts you'd use yourself:** Is this a reply to me? Have I
    written to this person? Am I the only recipient? Is it a mailing list?
 4. **It marks; it doesn't move.** Nothing disappears into a folder you forget

@@ -31,7 +31,7 @@ worth opening. This policy explains what it does with your information.
   add the same marker to mail from senders your own history shows are worth
   reading, so that mail is marked while your computer is off. Those rules
   only ever add the marker, and OpenWorthy never changes or deletes a rule
-  or filter you made yourself. `openworthy rules revoke` removes them. For
+  or filter you made yourself. Turning them off in Settings removes them. For
   Gmail this asks for one extra permission, to manage filters; without the
   feature it is never requested.
 
@@ -107,12 +107,13 @@ never used for advertising, and is never read by humans.
 
 ## Your control
 
-- **Stop at any time:** `openworthy account remove <account> --yes` deletes
-  the account's local data and credentials and, for Google, revokes
-  OpenWorthy's access.
+- **Stop at any time:** removing an account in Settings (or with
+  `openworthy account remove`) deletes the account's local data and
+  credentials and, for Google, revokes OpenWorthy's access.
 - **Revoke access yourself:** Google — myaccount.google.com/permissions;
   Microsoft — account.live.com/consent/Manage or your organisation's My Apps.
-- **Undo marks:** `openworthy undo` removes only the marks OpenWorthy added.
+- **Undo marks:** Undo on the Activity screen (or `openworthy undo`) removes
+  only the marks OpenWorthy added.
 
 ## Contact
 

@@ -4,96 +4,48 @@ title: Install OpenWorthy
 
 # Install
 
-**Most people:** download the app for your system from the
-[releases page](https://github.com/openworthy/openworthy.github.io/releases) —
-`OpenWorthy_…_macos_arm64.dmg` (Apple silicon), `…_macos_amd64.dmg` (Intel
-Mac), `…_windows_amd64_setup.exe`, or the Linux `.deb`/`.rpm`. Open it and it
-walks you through connecting your email. Closing its window leaves OpenWorthy
-marking mail in the background; *Help → Stop OpenWorthy* stops it.
+**[Download OpenWorthy](https://github.com/openworthy/openworthy.github.io/releases)**
+from the releases page:
 
-**Command line, servers and NAS:** OpenWorthy is also a single program with no dependencies. Download it for your
-system from the [releases page](https://github.com/openworthy/openworthy.github.io/releases),
-check it against `SHA256SUMS` (and its signature `SHA256SUMS.asc`), or use a
-package manager:
-
-| System | Command |
+| Your computer | Download |
 |---|---|
-| macOS (Homebrew) | `brew install --cask openworthy/openworthy/openworthy` |
-| Windows (winget) | `winget install OpenWorthy.OpenWorthy` |
-| Windows (Scoop) | `scoop bucket add openworthy https://github.com/openworthy/scoop-openworthy` then `scoop install openworthy` |
-| Debian / Ubuntu | download the `.deb`, then `sudo apt install ./openworthy_*.deb` |
-| Fedora / RHEL | download the `.rpm`, then `sudo dnf install ./openworthy_*.rpm` |
-| Docker (NAS, Raspberry Pi) | see below |
+| Mac with Apple silicon (M1 and later) | `OpenWorthy_…_macos_arm64.dmg` |
+| Mac with Intel | `OpenWorthy_…_macos_amd64.dmg` |
+| Windows | `OpenWorthy_…_windows_amd64_setup.exe` |
+| Linux | the `.deb` (Ubuntu, Debian) or `.rpm` (Fedora) |
 
-## Set up an account
+Open it, and it walks you through the rest.
 
-```
-openworthy account add you@example.com
-```
+## Connect your email
 
-Microsoft accounts open a browser to sign in. Gmail accounts do too when
-your copy of OpenWorthy includes Google sign-in (`openworthy version` shows
-it); otherwise they use an app password, or your own Google Cloud app
-(`--client-id`, see the app registration guide). Other providers ask for an
-**app password** — `account add` tells you where your provider issues one. Passwords and sign-in tokens are stored in your operating system's
-keychain, never in a file.
+Type your email address. Gmail and Microsoft accounts open your browser to
+sign in as usual. Other providers — iCloud, Fastmail, Yahoo and most others
+— ask for an **app password**, a password your provider issues for one app;
+OpenWorthy tells you where to get it. Your passwords and sign-ins are kept
+in your computer's own secure storage, never in a file.
 
-A new account starts in **preview**: OpenWorthy works out what it would mark
-and marks nothing until you have looked.
+## Look before it marks
 
-```
-openworthy run --once      # learn from your Sent folder, decide recent mail
-openworthy preview         # what it would mark, and why
-openworthy start --account ID [--reject KEY]   # start; leave out any it got wrong
-openworthy run             # keep running; marks new mail as it arrives
-```
+OpenWorthy first learns who you write to, from your Sent folder, then shows
+you what it would mark from the last week. Nothing is marked yet. Untick
+anything that isn't important — that teaches it — and press **Start
+marking**. From then on, new mail is marked as it arrives.
 
-`openworthy run` keeps going until you stop it (`openworthy stop`). While it
-runs, every other command talks to it, and it writes a short daily list of
-the emails worth reading.
+Closing the window leaves OpenWorthy marking mail in the background. To stop
+it, choose **Help → Stop OpenWorthy**.
 
 ## More than one computer
 
-Run OpenWorthy on as many of your computers as you like. They agree among
-themselves, through a small record kept in your mailbox, that **only one of
-them marks mail at a time**; if that one sleeps or shuts down, another takes
-over within about ten minutes. `openworthy status` shows which is active.
-
-## Docker
-
-For an always-on machine you own:
-
-```
-docker run -d --name openworthy --restart unless-stopped \
-  -v openworthy:/data \
-  -e OPENWORTHY_KEYRING_PASSPHRASE='a long passphrase of your choice' \
-  ghcr.io/openworthy/openworthy
-```
-
-A container has no OS keychain, so credentials are kept in an encrypted file
-in the volume, unlocked by that passphrase (at least 12 characters). To keep
-the passphrase out of the environment, put `passphrase_file = "/run/secrets/…"`
-under `[keyring]` in `/data/config.toml` and mount the secret there.
-
-Add an account with `docker exec -it openworthy openworthy account add …`.
-IMAP accounts with an app password work anywhere; Gmail and Microsoft
-sign-in opens a browser, so do it on a computer, or use an app password.
-
-## Check it
-
-```
-openworthy doctor
-```
-
-If something is wrong, `openworthy doctor --bundle` writes a diagnostic file
-with every address, subject and server name replaced by a meaningless token.
-Nothing is sent: read it, and attach it to a bug report if you wish.
+Install it on as many of your computers as you like. They agree among
+themselves that only one marks mail at a time; if that one sleeps or shuts
+down, another takes over within about ten minutes.
 
 ## Remove it
 
-```
-openworthy undo --since 30d            # optional: take its marks off
-openworthy account remove ID --yes     # deletes local data; revokes Google access
-```
+To take its marks off first, press **Undo all** on each group of marks on
+the Activity screen. Then, in **Settings**, press **Remove** next to each
+account: that deletes what OpenWorthy kept about it on your computer and,
+for Google, withdraws its access. Then delete the app.
 
-Then delete the program and its data folder (`openworthy doctor` shows where).
+Using the command line, a server, a NAS or Docker?
+[Everything technical is here](command-line.md).

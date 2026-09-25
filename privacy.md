@@ -12,10 +12,11 @@ title: Privacy
 - **It reads headers, not messages.** Sender, recipients, date, subject,
   conversation and mailing-list headers. Never the text of an email, never an
   attachment.
-- **What it keeps, on your computer only:** its decisions and counts of how
-  often you correspond with each sender. Addresses and message IDs are stored
-  as keyed one-way hashes, so the database is meaningless if copied. Subjects
-  are not stored. Passwords and sign-in tokens live in your OS keychain.
+- **What it keeps, on your computer only:** its decisions, and counts of how
+  often you correspond with each sender. Email addresses are stored
+  scrambled, in a form that can't be turned back into the address, so the
+  file means nothing if copied. Subjects are not stored. Passwords and
+  sign-ins live in your computer's own secure storage.
 - **What it changes in your mailbox:** its own "Worth Reading" marker, and a
   small record per computer (a random ID and a time) so your computers take
   turns. With Pro's server-side rules switched on, also rules on your mail
@@ -29,11 +30,12 @@ title: Privacy
   send your licence and support you. Your licence is checked on your
   computer; OpenWorthy never contacts us about it.
 - **No telemetry, no crash reports, no analytics.** If you report a bug, you
-  choose what to attach; `openworthy doctor --bundle` replaces every address,
-  subject and server name with a meaningless token first.
+  choose what to attach: *Help → Create a diagnostic file* replaces every
+  address, subject and server name with a meaningless token first.
 - **No AI model** reads your mail — locally or anywhere else.
-- **Leaving is complete:** `openworthy account remove` deletes the local data
-  and credentials and, for Google, revokes access.
+- **Leaving is complete:** removing an account in Settings deletes what
+  OpenWorthy kept about it and its sign-in and, for Google, withdraws its
+  access.
 
 **Don't take our word for it:** every connection OpenWorthy makes can be
 watched with free tools — [here's how](https://openworthy.github.io/verify/).

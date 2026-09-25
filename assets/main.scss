@@ -19,3 +19,42 @@
   height: auto;
   margin: 0 0 4px -12px;
 }
+
+// The home page's illustration of an inbox with marked emails.
+.inbox-mock {
+  margin: 1.5em 0;
+  border: 1px solid #dedcd6;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  font-size: 15px;
+
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 14px;
+    border-bottom: 1px solid #eeede9;
+    color: #5f6368;
+  }
+  .row.marked { color: #1d1d1f; }
+  .row.marked .from, .row.marked .subject { font-weight: 600; }
+  .from { flex: none; width: 9.5em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .subject { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .mark {
+    flex: none;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 1px 7px;
+    border-radius: 4px;
+    background: #0b804b;
+    color: #fff;
+  }
+  figcaption { padding: 8px 14px; font-size: 13px; color: #5f6368; background: #f7f7f5; }
+
+  @media (max-width: 600px) {
+    .row { flex-wrap: wrap; }
+    .from { width: auto; }
+    .subject { flex-basis: 100%; }
+  }
+}
