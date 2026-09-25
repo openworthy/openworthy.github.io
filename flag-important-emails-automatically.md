@@ -16,7 +16,9 @@ OpenWorthy turns exactly those facts into a **Worth Reading** marker:
   star instead.
 - **Outlook / Microsoft 365:** a category, visible in every Outlook app.
 - **iCloud, Fastmail, Yahoo, your own server:** the standard flag (a star in
-  most apps), or a keyword of your choice where the server supports keywords.
+  most apps; green in Apple Mail and iPhone Mail where the server keeps flag
+  colours, so it stands apart from your own flags), or a keyword of your
+  choice where the server supports keywords.
 
 Because it's an ordinary label, flag or category, it works in your mail app,
 on your phone, and in any smart folder or search you build on it.
