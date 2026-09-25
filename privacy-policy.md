@@ -80,8 +80,11 @@ processes your payment details under [its own privacy
 notice](https://www.paddle.com/legal/privacy); we never see them. Paddle
 shares with us your email address, country, and name if you give it, and
 what you bought, which we use only to issue your licence, send it to you and
-support you. We keep them for as long as your licence is valid and as
-required for our tax and accounting records.
+support you. A small service of ours receives the purchase from Paddle,
+signs your licence and emails it to you through our email provider, Resend,
+under [its privacy policy](https://resend.com/legal/privacy-policy); the
+service itself stores nothing. Paddle keeps the record of your purchase, as
+the law requires of a seller.
 
 Your licence is a short signed text that contains your email address. It is
 stored on your computer and checked there; OpenWorthy never sends it, or

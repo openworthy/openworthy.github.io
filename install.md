@@ -48,9 +48,9 @@ openworthy start --account ID [--reject KEY]   # start; leave out any it got wro
 openworthy run             # keep running; marks new mail as it arrives
 ```
 
-`openworthy run` keeps going until you stop it. While it runs, every other
-command talks to it, and it writes a short daily list of the emails worth
-reading.
+`openworthy run` keeps going until you stop it (`openworthy stop`). While it
+runs, every other command talks to it, and it writes a short daily list of
+the emails worth reading.
 
 ## More than one computer
 
