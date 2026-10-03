@@ -2,7 +2,7 @@
 # scripts/publish-site.sh publishes it to openworthy/openworthy.github.io.
 title: OpenWorthy
 description: Marks the email worth reading. Runs on your own computer and reads headers only; nothing about you or your mail ever leaves it.
-url: https://openworthy.github.io
+url: https://openworthy.buzzneuron.com
 baseurl: "" # an organization site is served at the root
 theme: minima
 permalink: pretty # /pricing/, as the app links to it

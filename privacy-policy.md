@@ -64,7 +64,7 @@ in [Check it yourself](verify.md).
 ## Updates
 
 The OpenWorthy app checks for a new version by downloading a public file
-from our website, openworthy.github.io, when it starts and once a day. The
+from our website, openworthy.buzzneuron.com, when it starts and once a day. The
 request carries nothing about you or your mail. As with any web request, the
 website's host, GitHub, receives your IP address and the details of the
 request, such as its time, under [GitHub's privacy

@@ -28,7 +28,7 @@ With the app closed the engine keeps running on its own.
 | Always, while it runs | engine | **Your mail provider, and nothing else.** IMAP: your provider's IMAP server (port 993), and its ManageSieve server (port 4190) if you use server-side rules. Gmail: `gmail.googleapis.com` and `oauth2.googleapis.com`. Microsoft: `graph.microsoft.com` and `login.microsoftonline.com` |
 | Adding a mailbox | engine | Your computer's own DNS resolver, to look up your email domain's mail servers. Signing in to Google or Microsoft opens your web browser at their sign-in page |
 | Removing a Google account | engine | `oauth2.googleapis.com`, to revoke OpenWorthy's access |
-| Checking for updates (on by default; switch it off in Settings) | app | `openworthy.github.io`, to download a public file listing the newest version. Installing an update downloads it from `github.com` and GitHub's download servers |
+| Checking for updates (on by default; switch it off in Settings) | app | `openworthy.buzzneuron.com`, to download a public file listing the newest version. Installing an update downloads it from `github.com` and GitHub's download servers |
 | Only when you choose | your browser | The pricing page and checkout open in your web browser — OpenWorthy itself is not involved |
 
 What you should **never** see: any other destination. There is no analytics

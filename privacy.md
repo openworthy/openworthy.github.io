@@ -38,7 +38,7 @@ title: Privacy
   access.
 
 **Don't take our word for it:** every connection OpenWorthy makes can be
-watched with free tools — [here's how](https://openworthy.github.io/verify/).
+watched with free tools — [here's how](https://openworthy.buzzneuron.com/verify/).
 
 The formal policy, including Google API user-data terms, is the
-[privacy policy](https://openworthy.github.io/privacy-policy/).
+[privacy policy](https://openworthy.buzzneuron.com/privacy-policy/).
